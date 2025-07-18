@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Request Example</title>
+    <!-- Include Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h1 id="result">User Request Result</h1>
+    <button onclick="fetchUser()">Fetch User</button>
+
+    <script>
+        // Async function to fetch user data
+        async function fetchUser() {
+            const userId = 4; // Hardcoded user ID
+            const userServerUrl = `http://localhost:3000/api/users/${userId}`; // Corrected URL
+
+            // Headers for the request
+            const headers = {
+                Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwicm9sZSI6IkVuc2VpZ25hbnQiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM1Njc4ODA2LCJleHAiOjE3MzU2ODk2MDZ9.PmelFu3uafJqht5HM79BZQU32HOl52INyMDfp-JvnpM',
+                'Content-Type': 'application/json', // Content-Type header
+            };
+
+            try {
+                // Make the GET request using Axios
+                const response = await axios.get(userServerUrl, { headers });
+
+                // Log the response from the server to the terminal
+                console.log('User Server Response:', response.data);
+
+                // Display the response in the <h1> tag
+                document.getElementById('result').innerText = JSON.stringify(response.data, null, 2);
+            } catch (error) {
+                // Handle errors
+                console.error('Error:', error);
+                if (error.response) {
+                    console.error('Response Error:', error.response.data);
+                    document.getElementById('result').innerText = 'Error: ' + JSON.stringify(error.response.data, null, 2);
+                } else if (error.request) {
+                    console.error('No Response:', error.request);
+                    document.getElementById('result').innerText = 'Error: No response received from the user server';
+                } else {
+                    console.error('Request Setup Error:', error.message);
+                    document.getElementById('result').innerText = 'Error: ' + error.message;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

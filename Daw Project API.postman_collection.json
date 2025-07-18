@@ -1,0 +1,1008 @@
+{
+	"info": {
+		"_postman_id": "380939d9-265e-4409-8c99-65370788537e",
+		"name": "Daw Project API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "33326939"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "Etudiant",
+					"item": [
+						{
+							"name": "list-etudiant",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"typeUtilisateur\":\"Etudiant\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{api}}/users"
+							},
+							"response": []
+						},
+						{
+							"name": "etudiant-torequest",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "etudiant-list-avec-status",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"url": "{{api}}/users//list/status"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Enseignant",
+					"item": [
+						{
+							"name": "list-enseignant",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"typeUtilisateur\":\"Enseignant\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{api}}/users"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "profile",
+					"item": [
+						{
+							"name": "update-profile",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6IkV0dWRpYW50IiwiaWF0IjoxNzM0OTUzMjg1LCJleHAiOjE3MzQ5NjQwODV9.ZR0kvMYqsEVgKeJRVzS8hHNeWC_mz2z982JmY7oWuiU",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nom\":\"ilyes\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{api}}/users/update/3"
+							},
+							"response": []
+						},
+						{
+							"name": "complete-profile",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6IkV0dWRpYW50IiwiaWF0IjoxNzM0OTUzMjg1LCJleHAiOjE3MzQ5NjQwODV9.ZR0kvMYqsEVgKeJRVzS8hHNeWC_mz2z982JmY7oWuiU",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nom\":\"oussama\",\n    \"prenom\":\"bjm\",\n    \"telephone\":\"055544393\",\n    \"domaine\":\"informatique\",\n    \"photo\":\"image.png\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{api}}/users/complete/3"
+							},
+							"response": []
+						},
+						{
+							"name": "profile",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"url": "{{api}}/users/3"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "user-registers",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{serverToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"student@test.com\",\r\n    \"motDePasse\": \"123456\",\r\n    \"typeUtilisateur\": \"Etudiant\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{api}}/users"
+					},
+					"response": []
+				},
+				{
+					"name": "user-login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "78heoytx56drg4ezd163dfjjs3",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"teacher@gamil.com\",\r\n    \"motDePasse\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{api}}/auth/login"
+					},
+					"response": []
+				},
+				{
+					"name": "user-delete",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": "{{api}}/users/delete/"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "projet",
+			"item": [
+				{
+					"name": "get-projets-disponnible",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": "{{api}}/projets/disponible"
+					},
+					"response": []
+				},
+				{
+					"name": "get-projets",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{api}}/projets",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"projets"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-projet-by-id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "default"
+							}
+						],
+						"url": "{{api}}/projets/1"
+					},
+					"response": []
+				},
+				{
+					"name": "create project",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"titre\": \"Gestion Ventes Project\",\n  \"description\": \"A project focused on the development of Gestion Ventes technologies.\",\n  \"domaine\": \"Gestion\",\n  \"motsCles\": \"Gestion, Manager, Ventes\",\n  \"enseignantId\":4\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{api}}/projets"
+					},
+					"response": []
+				},
+				{
+					"name": "update-projet",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"titre\": \"AI Project\",\n  \"description\": \"A project focused on the development of AI technologies.\",\n  \"domaine\": \"Artificial Intelligence\",\n  \"motsCles\": \"AI, Machine Learning\",\n  \"statut\": \"disponible\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{api}}/projets/update/1"
+					},
+					"response": []
+				},
+				{
+					"name": "remove-projet",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": "{{api}}/projets/3"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "candidature",
+			"item": [
+				{
+					"name": "create-candidature",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"projetId\": \"1\",\r\n    \"etudiantId\": \"1\",\r\n    \"senderId\":\"3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{api}}/candidatures"
+					},
+					"response": []
+				},
+				{
+					"name": "update-candidature",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"projetId\": \"1\",\r\n    \"etudiantId\": \"8\",\r\n    \"statut\":\"acceptee\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/candidatures/update/2",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"candidatures",
+								"update",
+								"2"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-candidature",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": "{{api}}/candidatures/delete/3"
+					},
+					"response": []
+				},
+				{
+					"name": "get-candidatures",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"projetId\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{api}}/candidatures"
+					},
+					"response": []
+				},
+				{
+					"name": "candidateur-aux-projet",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"projetId\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{api}}/candidatures/membres"
+					},
+					"response": []
+				},
+				{
+					"name": "candidatures-envoyer-par-etudiant",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"etudiantId\":3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{api}}/candidatures/envoyer"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "messages",
+			"item": [
+				{
+					"name": "create-message",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"contenu\": \"Hello, this is a message!\",\r\n  \"expId\": 1,\r\n  \"destId\": 3\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{api}}/messages"
+					},
+					"response": []
+				},
+				{
+					"name": "get-messages-by-user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "default"
+							}
+						],
+						"url": "{{api}}/messages/3"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "notifications",
+			"item": [
+				{
+					"name": "create-notification",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"message\": \"Notification message here\",\r\n    \"etudiantId\":3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{api}}/notifications"
+					},
+					"response": []
+				},
+				{
+					"name": "get-notifications-by-user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "default"
+							}
+						],
+						"url": "{{api}}/notifications/8"
+					},
+					"response": []
+				},
+				{
+					"name": "list-all-notification",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": "{{api}}/notifications"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "groupe",
+			"item": [
+				{
+					"name": "membre",
+					"item": [
+						{
+							"name": "create-membre",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"url": "{{api}}/membre"
+							},
+							"response": []
+						},
+						{
+							"name": "update-membre",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"statu\":\"accepter\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{api}}/membre/update/1"
+							},
+							"response": []
+						},
+						{
+							"name": "delete-membre",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{api}}/membre/delete/:id",
+									"host": [
+										"{{api}}"
+									],
+									"path": [
+										"membre",
+										"delete",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "groupe-membre-accepter",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{toen}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{api}}/membre/:id",
+									"host": [
+										"{{api}}"
+									],
+									"path": [
+										"membre",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user-request-coming",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"url": "{{api}}/membre/request/1"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "create-groupe",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"projetId\":2,\n    \"nom\":\"Groupe Dev\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{api}}/groupe"
+					},
+					"response": []
+				},
+				{
+					"name": "update-groupe",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"projetId\":2,\n    \"nom\":\"Groupe Gdsc\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{api}}/groupe/update/1"
+					},
+					"response": []
+				},
+				{
+					"name": "delete-groupe",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": "{{api}}/groupe/delete/2"
+					},
+					"response": []
+				},
+				{
+					"name": "groupe-info",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": "{{api}}/groupe/1"
+					},
+					"response": []
+				},
+				{
+					"name": "groupe-list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": "{{api}}/groupe"
+					},
+					"response": []
+				},
+				{
+					"name": "groupe-list-user-joined",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": "{{api}}/groupe/joined/3"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rules",
+			"item": [
+				{
+					"name": "get-rules",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": "{{api}}/rules"
+					},
+					"response": []
+				},
+				{
+					"name": "update-rules",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"max_projects\":3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{api}}/rules/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Administrateur",
+			"item": [
+				{
+					"name": "list-admins",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": "{{api}}/admins"
+					},
+					"response": []
+				},
+				{
+					"name": "add-admin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\":3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/admins",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"admins"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "api",
+			"value": "http://localhost/api",
+			"type": "default"
+		},
+		{
+			"key": "toen",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwicm9sZSI6IkVuc2VpZ25hbnQiLCJpYXQiOjE3MzQ5NTgwNTcsImV4cCI6MTczNDk2ODg1N30.lA1yoinZPur1UFM2Y8zoeh6EMkcYHgC5qpaaMG7Of30"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6IkV0dWRpYW50IiwiaWF0IjoxNzM1MjEyMjQ4LCJleHAiOjE3MzUyMjMwNDh9.E1Sieg7o-Dv-OnXDyUpUJhNphdo1FkslEvgO-Z1JG1M",
+			"type": "default"
+		},
+		{
+			"key": "serverToken",
+			"value": "78heoytx56drg4ezd163dfjjs3"
+		}
+	]
+}
